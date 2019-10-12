@@ -1,6 +1,6 @@
 ### Tower of Hanoi.
 For three stands, this code will tell you the steps to take in order to move the discs from A to C.
-'''python
+```python
 def move(f, t):
     print("Move disc from {} to {}!".format(f,t))
 
@@ -17,7 +17,7 @@ def hanoi(n, h, t, f):
         hanoi((n-1), h, f, t)
 
 hanoi(4, "B", "C", "A")
-'''
+```
 
 
 
