@@ -1,4 +1,4 @@
-### Tower of Hanoi.
+### Tower of Hanoi - October 12 2019
 For three stands, this code will tell you the steps to take in order to move the discs from A to C, while keeping in mind the rules of the game.
 ```python
 def move(from_, to):
@@ -19,7 +19,7 @@ def hanoi(number_of_discs, via, to, from_):
 
 ```
 
-### palindrome checker
+### palindrome checker - April 16 2020
 This code will check if a number is a palindrome or not. An easier way like slicing can be used but the challenge was not to.
 ```python
 num = int(input("enter number:"))
