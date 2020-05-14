@@ -76,7 +76,7 @@ model.compile(optimizer='adam',
               
 model.fit(x_train, y_train, epochs=10, callbacks=[callbacks]) # training the model, takes some time
 
-model.evaluate(x_test, ty_test) #tells us how accurate is the model
+model.evaluate(x_test, ty_test) #tells us how accurate the model is
 
 ```
 
