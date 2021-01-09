@@ -115,10 +115,12 @@ else:
 
 print(datetime.now() - startTime)
 ```
+
 ### Chess Game - 9 Jan 2021
 Very basic chess game using chessboard.js
 * [Play](https://neildagr8.github.io/chess-game/)
 * [Entire Code](https://github.com/Neildagr8/chess-game)
+
 ```js
 var board = null
 var newGame = new Chess()
