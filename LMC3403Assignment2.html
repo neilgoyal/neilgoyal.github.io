@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Master Git and GitHub basics with this interactive step-by-step guide by Neil Goyal" />
+  <meta name="description" content="Master Git and GitHub basics with this interactive step-by-step guide" />
   <title>Interactive Guide: Git & GitHub Mastery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" rel="preload" as="style" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="preload" as="style" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --primary: #2563eb;
@@ -24,7 +26,11 @@
       --transition: all 0.3s ease;
     }
     
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
     
     body {
       font-family: 'Open Sans', sans-serif;
@@ -64,7 +70,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1100&q=80') center/cover;
+      background: url('https://cdnjs.cloudflare.com/api/placeholder/1100/500') center/cover;
       opacity: 0.15;
       z-index: 1;
     }
@@ -75,77 +81,21 @@
       margin-bottom: 15px;
       font-weight: 700;
       letter-spacing: -0.5px;
+      color: white;
     }
     
     header p {
       font-size: 1.2em;
       opacity: 0.9;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin: 0 auto;
     }
     
-    .progress-tracker {
-      display: flex;
-      justify-content: space-between;
-      margin: 30px auto;
-      max-width: 800px;
-      position: relative;
-    }
-    
-    .progress-tracker::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: rgba(255, 255, 255, 0.3);
-      transform: translateY(-50%);
-      z-index: 1;
-    }
-    
-    .progress-step {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      font-weight: 600;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      cursor: pointer;
-      position: relative;
-      z-index: 2;
-      transition: var(--transition);
-    }
-    
-    .progress-step.completed {
-      background: var(--success);
-      border-color: var(--success);
-    }
-    
-    .progress-step-label {
-      position: absolute;
-      bottom: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.8em;
-      white-space: nowrap;
-      opacity: 0.8;
-    }
-    
+    .progress-tracker,
+    .progress-step,
+    .progress-step-label,
     .progress-completed {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      height: 2px;
-      background-color: var(--success);
-      transform: translateY(-50%);
-      z-index: 1;
-      transition: var(--transition);
-      width: 0%;
+      display: none;
     }
     
     nav {
@@ -170,7 +120,9 @@
       list-style: none;
     }
     
-    .nav-links li { position: relative; }
+    .nav-links li {
+      position: relative;
+    }
     
     .nav-links a {
       display: block;
@@ -194,11 +146,12 @@
       transition: var(--transition);
     }
     
-    .nav-links a:hover, .nav-links a.active {
+    .nav-links a:hover {
       color: var(--primary);
     }
     
-    .nav-links a:hover::after, .nav-links a.active::after {
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
       transform: scaleX(1);
     }
     
@@ -212,11 +165,18 @@
       padding: 15px 0;
     }
     
-    main { padding: 40px; }
+    main {
+      padding: 40px;
+    }
     
-    section { margin-bottom: 60px; padding-top: 20px; }
+    section {
+      margin-bottom: 60px;
+      padding-top: 20px;
+    }
     
-    section:last-child { margin-bottom: 0; }
+    section:last-child {
+      margin-bottom: 0;
+    }
     
     h2 {
       font-family: 'Montserrat', sans-serif;
@@ -245,11 +205,20 @@
       font-size: 1.5em;
     }
     
-    p { margin-bottom: 20px; color: #475569; }
+    p {
+      margin-bottom: 20px;
+      color: #475569;
+    }
     
-    a { color: var(--primary); text-decoration: none; transition: var(--transition); }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
     
-    a:hover { color: var(--primary-dark); }
+    a:hover {
+      color: var(--primary-dark);
+    }
     
     .card {
       background: white;
@@ -313,7 +282,9 @@
       transition: var(--transition);
     }
     
-    .copy-btn:hover { background: var(--primary-dark); }
+    .copy-btn:hover {
+      background: var(--primary-dark);
+    }
     
     iframe {
       border-radius: var(--border-radius);
@@ -330,7 +301,9 @@
       margin: 30px 0;
     }
     
-    .visual-content { flex: 1; }
+    .visual-content {
+      flex: 1;
+    }
     
     .visual-image {
       flex: 1;
@@ -390,7 +363,13 @@
       box-shadow: var(--shadow);
     }
     
-    .quiz-question { margin-bottom: 30px; }
+    .quiz-question {
+      margin-bottom: 30px;
+      background: white;
+      padding: 25px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
     
     .quiz-question p {
       font-weight: 600;
@@ -410,15 +389,15 @@
       border: 1px solid #e2e8f0;
     }
     
-    .quiz-question label:hover { background: #e0e7ff; }
+    .quiz-question label:hover {
+      background: #e0e7ff;
+    }
     
     .quiz-question input[type="radio"] {
       margin-right: 10px;
       cursor: pointer;
       accent-color: var(--primary);
     }
-    
-    .quiz-feedback { display: none; margin-top: 10px; font-size: 0.9em; }
     
     .quiz-submit {
       background: var(--primary);
@@ -428,6 +407,7 @@
       border-radius: var(--border-radius);
       font-weight: 600;
       cursor: pointer;
+      font-size: 1em;
       transition: var(--transition);
       margin-top: 20px;
     }
@@ -447,9 +427,15 @@
       font-size: 1.1em;
     }
     
-    .result-success { background: #d1fae5; color: #065f46; }
+    .result-success {
+      background: #d1fae5;
+      color: #065f46;
+    }
     
-    .result-partial { background: #fef3c7; color: #92400e; }
+    .result-partial {
+      background: #fef3c7;
+      color: #92400e;
+    }
     
     .btn {
       display: inline-block;
@@ -462,9 +448,14 @@
       transition: var(--transition);
       border: none;
       cursor: pointer;
+      text-align: center;
     }
     
-    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      color: white;
+    }
     
     .btn-secondary {
       background: white;
@@ -488,14 +479,34 @@
     .resource-card {
       background: white;
       border-radius: var(--border-radius);
+      overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
-      padding: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     
     .resource-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .resource-img {
+      height: 160px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3em;
+    }
+    
+    .resource-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
     
     .resource-title {
@@ -509,6 +520,7 @@
       color: var(--gray);
       font-size: 0.9em;
       margin-bottom: 15px;
+      flex-grow: 1;
     }
     
     .cta-section {
@@ -525,17 +537,23 @@
       font-family: 'Montserrat', sans-serif;
     }
     
-    .cta-text { max-width: 700px; margin: 0 auto 30px; font-size: 1.1em; opacity: 0.9; }
+    .cta-text {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
     
     .cta-btn {
       background: white;
       color: var(--primary);
+      font-weight: 600;
       padding: 15px 30px;
       border-radius: var(--border-radius);
+      display: inline-block;
       transition: var(--transition);
       text-decoration: none;
       font-size: 1.1em;
-      font-weight: 600;
     }
     
     .cta-btn:hover {
@@ -551,6 +569,11 @@
       text-align: center;
     }
     
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
     .footer-links {
       display: flex;
       justify-content: center;
@@ -564,7 +587,13 @@
       transition: var(--transition);
     }
     
-    .footer-links a:hover { color: white; }
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .social-links {
+      margin: 20px 0;
+    }
     
     .social-links a {
       display: inline-block;
@@ -629,7 +658,9 @@
       margin-top: 15px;
     }
     
-    .interactive-code button:hover { background: var(--primary-dark); }
+    .interactive-code button:hover {
+      background: var(--primary-dark);
+    }
     
     .step-note {
       background: #e0f2fe;
@@ -647,31 +678,124 @@
       margin-top: 2px;
     }
     
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .tooltip .tooltip-text {
+      visibility: hidden;
+      width: 200px;
+      background-color: var(--secondary);
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      padding: 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.9em;
+    }
+    
+    .tooltip:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    /* Output class for simulation results */
+    .output {
+      display: none;
+      margin-top: 15px;
+      padding: 10px;
+      background: #f1f5f9;
+      border-radius: 6px;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    main section {
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    /* Media Queries */
     @media (max-width: 900px) {
-      .visual-section { flex-direction: column; }
-      .visual-image { order: -1; }
-      h2 { font-size: 1.8em; }
+      .visual-section {
+        flex-direction: column;
+      }
+      
+      .visual-image {
+        order: -1;
+      }
+      
+      h2 {
+        font-size: 1.8em;
+      }
     }
     
     @media (max-width: 768px) {
-      main { padding: 30px 20px; }
-      header { padding: 40px 20px; }
-      header h1 { font-size: 2.2em; }
-      .progress-tracker { flex-wrap: wrap; justify-content: center; gap: 20px; }
-      .progress-tracker::before { display: none; }
-      .progress-step { margin: 0 10px; }
-      .nav-container { flex-direction: column; position: relative; }
-      .nav-links { flex-direction: column; display: none; }
-      .nav-links.active { display: flex; }
-      .mobile-menu-btn { display: block; position: absolute; right: 20px; top: 15px; }
-      .resources-grid { grid-template-columns: 1fr; }
+      main {
+        padding: 30px 20px;
+      }
+      
+      header {
+        padding: 40px 20px;
+      }
+      
+      header h1 {
+        font-size: 2.2em;
+      }
+      
+      .nav-container {
+        flex-direction: column;
+        position: relative;
+      }
+      
+      .nav-links {
+        flex-direction: column;
+        display: none;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+      }
+      
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
     }
     
     @media (max-width: 480px) {
-      .container { margin: 20px 10px; }
-      main { padding: 20px 15px; }
-      h2 { font-size: 1.6em; }
-      .cta-section { padding: 40px 20px; margin: 40px -15px -20px; }
+      .container {
+        margin: 20px 10px;
+      }
+      
+      main {
+        padding: 20px 15px;
+      }
+      
+      h2 {
+        font-size: 1.6em;
+      }
+      
+      .cta-section {
+        padding: 40px 20px;
+        margin: 40px -15px -20px;
+      }
     }
   </style>
 </head>
@@ -680,438 +804,489 @@
     <header>
       <div class="header-content">
         <h1>Git & GitHub Mastery</h1>
-        <p>Master version control in ~1 hour with Neil Goyal's interactive guide</p>
-        <div class="progress-tracker" id="progress-tracker">
-          <div class="progress-completed" id="progress-bar"></div>
-          <div class="progress-step" data-step="1"><i class="fas fa-download"></i><span class="progress-step-label">Install</span></div>
-          <div class="progress-step" data-step="2"><i class="fas fa-cog"></i><span class="progress-step-label">Config</span></div>
-          <div class="progress-step" data-step="3"><i class="fas fa-folder"></i><span class="progress-step-label">Repo</span></div>
-          <div class="progress-step" data-step="4"><i class="fas fa-cloud-upload-alt"></i><span class="progress-step-label">Connect</span></div>
-          <div class="progress-step" data-step="5"><i class="fas fa-code-branch"></i><span class="progress-step-label">Branch</span></div>
-          <div class="progress-step" data-step="6"><i class="fas fa-clone"></i><span class="progress-step-label">Clone</span></div>
-          <div class="progress-step" data-step="7"><i class="fas fa-question-circle"></i><span class="progress-step-label">Quiz</span></div>
-        </div>
+        <p>Master version control in ~1 hour with this interactive step-by-step guide</p>
       </div>
     </header>
 
     <nav>
       <div class="nav-container">
-        <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
         <ul class="nav-links" id="nav-links">
           <li><a href="#installing" class="active"><i class="fas fa-download"></i> Install Git</a></li>
           <li><a href="#configure"><i class="fas fa-cog"></i> Configure</a></li>
           <li><a href="#repository"><i class="fas fa-folder"></i> Repository</a></li>
           <li><a href="#connect"><i class="fas fa-cloud-upload-alt"></i> Connect</a></li>
           <li><a href="#branching"><i class="fas fa-code-branch"></i> Branching</a></li>
-          <li><a href="#cloning"><i class="fas fa-clone"></i> Cloning</a></li>
           <li><a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a></li>
         </ul>
       </div>
     </nav>
 
     <main>
+      <!-- Step 1: Installing Git -->
       <section id="installing">
-        <h2><i class="fas fa-download"></i> Step 1: Installing Git (~10 min)</h2>
-        <p>Git is a distributed version control system that tracks changes to your code. Let’s install it to get started.</p>
+        <h2><i class="fas fa-download"></i> Step 1: Installing Git</h2>
+        <p>Let's get Git running on your machine to start your version control journey.</p>
+        
         <div class="card">
           <h3>Installation Steps</h3>
           <ol>
-            <li>Download Git from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">git-scm.com</a>.</li>
-            <li>Run the installer, accepting default settings (recommended for beginners).</li>
-            <li>Verify the installation in a terminal.</li>
+            <li>Download the latest version from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">git-scm.com</a></li>
+            <li>Follow the installation wizard (default settings work for most users)</li>
+            <li>Verify your installation in a terminal/command prompt</li>
           </ol>
           <div class="step-note">
             <i class="fas fa-lightbulb"></i>
-            <div><strong>Pro Tip:</strong> On Windows, Git Bash provides a powerful command-line interface.</div>
+            <div>
+              <strong>Pro Tip:</strong> Installing Git also gives you Git Bash on Windows for a Linux-like command line experience.
+            </div>
           </div>
         </div>
+        
         <iframe src="https://www.youtube.com/embed/J_Clau1bYco" title="How to Install Git" allowfullscreen></iframe>
+        
         <div class="interactive-code">
-          <p>Check if Git is installed:</p>
-          <div class="code-header"><span>Terminal</span></div>
+          <p>Verify your Git installation by checking its version:</p>
+          <div class="code-header">
+            <span>Command Line</span>
+          </div>
           <pre class="with-header">git --version<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
           <button onclick="simulateGitVersion()">Simulate Output</button>
-          <div id="git-version-output" style="display: none; margin-top: 15px; padding: 10px; background: #f1f5f9; border-radius: 6px;"></div>
+          <div id="git-version-output" class="output"></div>
         </div>
-        <div class="checklist">
-          <h3 class="checklist-title"><i class="fas fa-tasks"></i> Installation Checklist</h3>
-          <label><input type="checkbox"> Downloaded Git installer</label>
-          <label><input type="checkbox"> Ran the installer</label>
-          <label><input type="checkbox"> Verified with <code>git --version</code></label>
+
+        <div class="interactive-code">
+          <p>Check your Git configuration settings:</p>
+          <div class="code-header">
+            <span>Command Line</span>
+          </div>
+          <pre class="with-header">git config --list<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+          <button onclick="simulateConfigList()">Simulate Output</button>
+          <div id="config-list-output" class="output"></div>
         </div>
       </section>
 
+      <!-- Step 2: Configure Git -->
       <section id="configure">
-        <h2><i class="fas fa-cog"></i> Step 2: Configure Git (~10 min)</h2>
-        <p>Configure Git with your identity to track your contributions.</p>
+        <h2><i class="fas fa-cog"></i> Step 2: Configure Git</h2>
+        <p>Setting your identity is essential for working with Git. This links your commits to your name and email address.</p>
+        
         <div class="visual-section">
           <div class="visual-content">
-            <div class="code-header"><span>Configure Identity</span></div>
-            <pre class="with-header">git config --global user.name "Neil Goyal"
-git config --global user.email "neil@example.com"<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
-            <p>The <code>--global</code> flag sets this configuration for all repositories on your machine.</p>
+            <div class="code-header">
+              <span>Configure Identity</span>
+            </div>
+            <pre class="with-header">git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+            <p>Git uses this information to identify who made each commit in a project's history. It's important for collaboration.</p>
             <div class="step-note">
               <i class="fas fa-info-circle"></i>
-              <div><strong>Note:</strong> Use the email tied to your GitHub account for seamless integration.</div>
+              <div>
+                <strong>Note:</strong> Ensure the email address matches the one you use for GitHub.
+              </div>
             </div>
           </div>
           <div class="visual-image">
-            <img src="https://git-scm.com/images/logo@2x.png" alt="Git Logo" width="400" height="168">
+            <img src="https://git-scm.com/images/logo@2x.png" alt="Git Logo - Version Control System Logo" width="400" height="168">
           </div>
         </div>
+        
         <div class="interactive-code">
-          <p>Verify your settings:</p>
-          <div class="code-header"><span>Terminal</span></div>
+          <p>Verify your configuration settings:</p>
+          <div class="code-header">
+            <span>Command Line</span>
+          </div>
           <pre class="with-header">git config --list<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
           <button onclick="simulateConfigList()">Simulate Output</button>
-          <div id="config-list-output" style="display: none; margin-top: 15px; padding: 10px; background: #f1f5f9; border-radius: 6px;"></div>
-        </div>
-        <div class="checklist">
-          <h3 class="checklist-title"><i class="fas fa-tasks"></i> Config Checklist</h3>
-          <label><input type="checkbox"> Set username with <code>git config</code></label>
-          <label><input type="checkbox"> Set email with <code>git config</code></label>
-          <label><input type="checkbox"> Verified settings</label>
+          <div id="config-list-output" class="output"></div>
         </div>
       </section>
 
+      <!-- Step 3: Create a Repository -->
       <section id="repository">
-        <h2><i class="fas fa-folder"></i> Step 3: Create a Repository (~10 min)</h2>
-        <p>A repository ("repo") stores your project’s files and history.</p>
+        <h2><i class="fas fa-folder"></i> Step 3: Create a Repository</h2>
+        <p>A repository is where your project lives. It tracks all changes so you can revert to previous versions if needed.</p>
         <div class="card">
-          <h3>GitHub Setup</h3>
+          <h3>GitHub Repository Setup</h3>
           <ol>
-            <li>Sign up at <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub.com</a>.</li>
-            <li>Click "New repository" from the "+" menu.</li>
-            <li>Name it (e.g., "my-first-repo"), set visibility, and create.</li>
+            <li>Sign up or sign in at <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub.com</a></li>
+            <li>Click the "+" icon in the top-right corner and select "New repository"</li>
+            <li>Name your repository (e.g., "my-first-repo")</li>
+            <li>Add an optional description</li>
+            <li>Choose public or private visibility</li>
+            <li>Click "Create repository"</li>
           </ol>
         </div>
+        
         <div class="visual-section">
           <div class="visual-content">
-            <h3>Why GitHub?</h3>
-            <p>GitHub enhances Git with collaboration tools like pull requests and issues.</p>
-            <a href="https://github.com/join" target="_blank" rel="noopener noreferrer" class="btn">Join GitHub</a>
+            <h3>Why Use GitHub?</h3>
+            <p>GitHub provides a secure, cloud-based location for your repositories and collaboration features like pull requests, issue tracking, and more.</p>
+            <a href="https://github.com/join" target="_blank" rel="noopener noreferrer" class="btn">Create GitHub Account</a>
           </div>
           <div class="visual-image">
-            <img src="https://docs.github.com/assets/cb-23992/images/help/repository/repo-create.png" alt="Creating a GitHub repository" width="500" height="300">
+            <img src="https://docs.github.com/assets/cb-23992/images/help/repository/repo-create.png" alt="Creating a GitHub repository interface screenshot" width="500" height="300">
           </div>
         </div>
+        
         <iframe src="https://www.youtube.com/embed/0fKg7e37bQE" title="Creating a GitHub Repository" allowfullscreen></iframe>
       </section>
 
+      <!-- Step 4: Connect to GitHub -->
       <section id="connect">
-        <h2><i class="fas fa-cloud-upload-alt"></i> Step 4: Connect to GitHub (~15 min)</h2>
-        <p>Link your local project to GitHub to share and back up your work.</p>
+        <h2><i class="fas fa-cloud-upload-alt"></i> Step 4: Connect to GitHub</h2>
+        <p>Connect your local project to GitHub and push your code online to access it anywhere and collaborate with others.</p>
         <div class="card">
-          <h3>Basic Workflow</h3>
-          <div class="code-header"><span>Git Commands</span></div>
-          <pre class="with-header">git init
+          <h3>The Git Workflow</h3>
+          <div class="code-header">
+            <span>Basic Git Commands</span>
+          </div>
+          <pre class="with-header"># Initialize a new Git repository
+git init
+
+# Add files to staging area
 git add .
+
+# Commit changes with a message
 git commit -m "First commit"
+
+# Connect to GitHub repository
 git remote add origin https://github.com/username/my-first-repo.git
+
+# Push code to GitHub
 git push -u origin main<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
         </div>
+        
         <div class="visual-section">
           <div class="visual-content">
-            <h3>Git Flow</h3>
-            <p>Git’s three stages: Working Directory → Staging Area → Repository.</p>
+            <h3>Understanding the Git Flow</h3>
+            <p>Git uses a three-stage architecture:</p>
+            <ol>
+              <li><strong>Working Directory:</strong> Where you modify files</li>
+              <li><strong>Staging Area:</strong> Where you prepare changes for commit</li>
+              <li><strong>Repository:</strong> Where commits are stored permanently</li>
+            </ol>
             <div class="step-note">
               <i class="fas fa-lightbulb"></i>
-              <div><strong>Tip:</strong> Run <code>git status</code> to monitor your progress.</div>
+              <div>
+                <strong>Pro Tip:</strong> Use <code>git status</code> frequently to review tracked, modified, or staged files.
+              </div>
             </div>
           </div>
           <div class="visual-image">
             <img src="https://git-scm.com/images/about/index1@2x.png" alt="Git Workflow Diagram" width="550" height="309">
           </div>
         </div>
+        
         <div class="interactive-code">
-          <p>Practice in a simulator:</p>
-          <a href="https://replit.com/@replit/Git-Starter" target="_blank" class="btn">Open Simulator</a>
+          <p>Try these commands on your own project or in an online simulator:</p>
+          <a href="https://replit.com/@replit/Git-Starter" target="_blank" class="btn">Open Git Simulator</a>
         </div>
+        
         <div class="checklist">
           <h3 class="checklist-title"><i class="fas fa-tasks"></i> Connection Checklist</h3>
-          <label><input type="checkbox"> Initialized repo</label>
-          <label><input type="checkbox"> Added files</label>
-          <label><input type="checkbox"> Committed changes</label>
-          <label><input type="checkbox"> Set remote URL</label>
-          <label><input type="checkbox"> Pushed to GitHub</label>
+          <label><input type="checkbox"> Created a local folder for your project</label>
+          <label><input type="checkbox"> Initialized repo with <code>git init</code></label>
+          <label><input type="checkbox"> Added files with <code>git add .</code></label>
+          <label><input type="checkbox"> Committed with <code>git commit -m "message"</code></label>
+          <label><input type="checkbox"> Added remote with <code>git remote add origin URL</code></label>
+          <label><input type="checkbox"> Pushed to GitHub with <code>git push</code></label>
         </div>
       </section>
 
+      <!-- Step 5: Branching Basics -->
       <section id="branching">
-        <h2><i class="fas fa-code-branch"></i> Step 5: Branching Basics (~10 min)</h2>
-        <p>Branches isolate changes, keeping your main codebase stable.</p>
+        <h2><i class="fas fa-code-branch"></i> Step 5: Branching Basics</h2>
+        <p>Branches let you develop features, fix bugs, or experiment without affecting the main codebase.</p>
         <div class="card">
-          <h3>Branch Commands</h3>
-          <div class="code-header"><span>Terminal</span></div>
-          <pre class="with-header">git branch feature
-git checkout feature
+          <h3>Working with Branches</h3>
+          <div class="code-header">
+            <span>Branching Commands</span>
+          </div>
+          <pre class="with-header"># Create a new branch
+git branch feature-name
+
+# Switch to the new branch
+git checkout feature-name
+
+# Or create and switch in one command
+git checkout -b feature-name
+
+# Make changes, add and commit them
 git add .
-git commit -m "Add feature"
+git commit -m "Add new feature"
+
+# Switch back to main branch
 git checkout main
-git merge feature<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+
+# Merge changes from feature branch
+git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
         </div>
+        
         <div class="visual-section">
           <div class="visual-content">
-            <h3>Why Branch?</h3>
-            <p>Develop features or fixes safely, then merge when ready.</p>
+            <h3>Why Use Branches?</h3>
+            <ul>
+              <li>Develop features in isolation</li>
+              <li>Work on multiple features simultaneously</li>
+              <li>Experiment without risking stability</li>
+              <li>Collaborate without conflicts</li>
+              <li>Create clean release histories</li>
+            </ul>
+            <div class="step-note">
+              <i class="fas fa-info-circle"></i>
+              <div>
+                <strong>Best Practice:</strong> Create a new branch for each feature or bug fix. Use descriptive names like <code>user-authentication</code> or <code>fix-login-bug</code>.
+              </div>
+            </div>
           </div>
           <div class="visual-image">
             <img src="https://git-scm.com/images/about/branches@2x.png" alt="Git Branching Diagram" width="550" height="309">
           </div>
         </div>
+        
         <iframe src="https://www.youtube.com/embed/QV0kUo7W8TM" title="Git Branching Tutorial" allowfullscreen></iframe>
-        <div class="checklist">
-          <h3 class="checklist-title"><i class="fas fa-tasks"></i> Branching Checklist</h3>
-          <label><input type="checkbox"> Created a branch</label>
-          <label><input type="checkbox"> Switched to branch</label>
-          <label><input type="checkbox"> Committed changes</label>
-          <label><input type="checkbox"> Merged back to main</label>
-        </div>
       </section>
 
-      <section id="cloning">
-        <h2><i class="fas fa-clone"></i> Step 6: Cloning Repositories (~10 min)</h2>
-        <p>Clone existing repos to collaborate or explore others’ work.</p>
-        <div class="card">
-          <h3>Clone a Repo</h3>
-          <div class="code-header"><span>Terminal</span></div>
-          <pre class="with-header">git clone https://github.com/username/repo.git<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
-          <p>Replace the URL with any public repo’s address.</p>
-        </div>
-        <div class="visual-section">
-          <div class="visual-content">
-            <h3>Why Clone?</h3>
-            <p>Get a local copy of remote projects to contribute or learn.</p>
-            <div class="step-note">
-              <i class="fas fa-info-circle"></i>
-              <div><strong>Note:</strong> Use <code>git pull</code> later to update your clone.</div>
-            </div>
-          </div>
-          <div class="visual-image">
-            <img src="https://git-scm.com/images/about/remote@2x.png" alt="Git Cloning Diagram" width="550" height="309">
-          </div>
-        </div>
-        <iframe src="https://www.youtube.com/embed/8JJ101D3knE" title="Git Cloning Tutorial" allowfullscreen></iframe>
-        <div class="checklist">
-          <h3 class="checklist-title"><i class="fas fa-tasks"></i> Cloning Checklist</h3>
-          <label><input type="checkbox"> Found a repo URL</label>
-          <label><input type="checkbox"> Ran <code>git clone</code></label>
-          <label><input type="checkbox"> Navigated into cloned folder</label>
-        </div>
-      </section>
-
+      <!-- Interactive Quiz -->
       <section id="quiz">
-        <h2><i class="fas fa-question-circle"></i> Interactive Quiz (~15 min)</h2>
-        <p>Test your Git and GitHub skills!</p>
+        <h2><i class="fas fa-question-circle"></i> Interactive Quiz</h2>
+        <p>Test your knowledge of Git and GitHub basics.</p>
         <div class="quiz">
           <form id="quiz-form">
             <div class="quiz-question">
-              <p>1. What command starts a new Git repository?</p>
+              <p>1. What command initializes a new Git repository?</p>
               <label><input type="radio" name="q1" value="a"> git start</label>
               <label><input type="radio" name="q1" value="b"> git init</label>
               <label><input type="radio" name="q1" value="c"> git create</label>
-              <div class="quiz-feedback" id="q1-feedback"></div>
             </div>
             <div class="quiz-question">
-              <p>2. How do you stage all changes?</p>
+              <p>2. How do you stage all modified files for commit?</p>
               <label><input type="radio" name="q2" value="a"> git add .</label>
               <label><input type="radio" name="q2" value="b"> git commit -a</label>
               <label><input type="radio" name="q2" value="c"> git stage --all</label>
-              <div class="quiz-feedback" id="q2-feedback"></div>
             </div>
             <div class="quiz-question">
               <p>3. What does <code>git push</code> do?</p>
-              <label><input type="radio" name="q3" value="a"> Updates local repo</label>
-              <label><input type="radio" name="q3" value="b"> Sends to remote repo</label>
-              <label><input type="radio" name="q3" value="c"> Creates a branch</label>
-              <div class="quiz-feedback" id="q3-feedback"></div>
+              <label><input type="radio" name="q3" value="a"> Updates local repository with remote changes</label>
+              <label><input type="radio" name="q3" value="b"> Sends committed changes to remote repository</label>
+              <label><input type="radio" name="q3" value="c"> Creates a new branch</label>
             </div>
             <div class="quiz-question">
               <p>4. How do you switch to a branch named "feature"?</p>
               <label><input type="radio" name="q4" value="a"> git branch feature</label>
               <label><input type="radio" name="q4" value="b"> git checkout feature</label>
-              <label><input type="radio" name="q4" value="c"> git merge feature</label>
-              <div class="quiz-feedback" id="q4-feedback"></div>
+              <label><input type="radio" name="q4" value="c"> git switch feature</label>
             </div>
             <div class="quiz-question">
-              <p>5. What command clones a repository?</p>
-              <label><input type="radio" name="q5" value="a"> git copy</label>
-              <label><input type="radio" name="q5" value="b"> git clone</label>
-              <label><input type="radio" name="q5" value="c"> git pull</label>
-              <div class="quiz-feedback" id="q5-feedback"></div>
+              <p>5. What's the correct order of the Git workflow?</p>
+              <label><input type="radio" name="q5" value="a"> Commit → Stage → Push</label>
+              <label><input type="radio" name="q5" value="b"> Stage → Commit → Push</label>
+              <label><input type="radio" name="q5" value="c"> Stage → Push → Commit</label>
             </div>
             <button type="button" class="quiz-submit" onclick="submitQuiz()">Submit Answers</button>
           </form>
           <div id="quiz-result" class="quiz-result"></div>
-          <button id="retry-quiz" class="btn btn-secondary" style="display: none; margin-top: 20px;" onclick="retryQuiz()">Retry Quiz</button>
         </div>
       </section>
 
+      <!-- Learning Resources -->
       <section id="resources">
         <h2><i class="fas fa-book"></i> Learning Resources</h2>
-        <p>Deepen your Git knowledge with these resources.</p>
+        <p>Continue your Git and GitHub journey with these excellent resources.</p>
         <div class="resources-grid">
           <div class="resource-card">
-            <div class="resource-title">GitHub Learning Lab</div>
-            <p class="resource-desc">Interactive courses for Git and GitHub mastery.</p>
-            <a href="https://lab.github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Explore</a>
+            <div class="resource-img">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="resource-content">
+              <div class="resource-title">GitHub Learning Lab</div>
+              <p class="resource-desc">Interactive courses and projects to help you master Git and GitHub.</p>
+              <a href="https://lab.github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Explore</a>
+            </div>
           </div>
           <div class="resource-card">
-            <div class="resource-title">Pro Git Book</div>
-            <p class="resource-desc">Free comprehensive guide by Scott Chacon.</p>
-            <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Read</a>
+            <div class="resource-img">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="resource-content">
+              <div class="resource-title">Pro Git Book</div>
+              <p class="resource-desc">The entire Pro Git book, written by Scott Chacon and Ben Straub.</p>
+              <a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Read</a>
+            </div>
           </div>
           <div class="resource-card">
-            <div class="resource-title">Atlassian Tutorials</div>
-            <p class="resource-desc">Detailed Git workflow tutorials.</p>
-            <a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Learn</a>
+            <div class="resource-img">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="resource-content">
+              <div class="resource-title">Atlassian Git Tutorials</div>
+              <p class="resource-desc">Comprehensive guides and tutorials for Git workflows.</p>
+              <a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Learn</a>
+            </div>
+          </div>
+          <div class="resource-card">
+            <div class="resource-img">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="resource-content">
+              <div class="resource-title">Git Cheat Sheet</div>
+              <p class="resource-desc">Quick reference for Git commands and workflows.</p>
+              <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Download</a>
+            </div>
           </div>
         </div>
       </section>
-
+      
+      <!-- Call To Action -->
       <section id="cta" class="cta-section">
-        <h2 class="cta-title">Ready to Master Git?</h2>
-        <p class="cta-text">Start building your portfolio on GitHub and collaborate globally.</p>
-        <a href="https://github.com/join" target="_blank" rel="noopener noreferrer" class="cta-btn">Join GitHub Now</a>
+        <h2 class="cta-title">Ready to Master Version Control?</h2>
+        <p class="cta-text">Put your new Git skills to work by creating your own GitHub portfolio. Show off your projects and collaborate with developers worldwide.</p>
+        <a href="https://github.com/join" target="_blank" rel="noopener noreferrer" class="cta-btn">Create Your GitHub Account</a>
       </section>
     </main>
 
     <footer>
-      <p>© 2025 Git & GitHub Mastery by Neil Goyal for Assignment 2</p>
-      <ul class="footer-links">
-        <li><a href="#installing">Install</a></li>
-        <li><a href="#configure">Configure</a></li>
-        <li><a href="#repository">Repository</a></li>
-        <li><a href="#connect">Connect</a></li>
-        <li><a href="#branching">Branching</a></li>
-        <li><a href="#cloning">Cloning</a></li>
-      </ul>
-      <div class="social-links">
-        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+      <div class="footer-content">
+        <p>© 2025 Git & GitHub Mastery Guide for Assignment 2</p>
+        <ul class="footer-links">
+          <li><a href="#installing">Install Git</a></li>
+          <li><a href="#configure">Configure</a></li>
+          <li><a href="#repository">Repository</a></li>
+          <li><a href="#connect">Connect</a></li>
+          <li><a href="#branching">Branching</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+        </div>
       </div>
     </footer>
   </div>
-
-  <div class="btn-floating" id="back-to-top" style="display: none;"><i class="fas fa-arrow-up"></i></div>
+  
+  <div class="btn-floating" id="back-to-top" style="display: none;">
+    <i class="fas fa-arrow-up"></i>
+  </div>
 
   <script>
+    // Copy code function using previousElementSibling for robustness
     function copyCode(button) {
-      const code = button.previousSibling.textContent;
-      navigator.clipboard.writeText(code).then(() => {
-        button.textContent = "Copied!";
-        setTimeout(() => button.textContent = "Copy", 2000);
-      }).catch(err => alert("Failed to copy: " + err));
+      const code = button.previousElementSibling.textContent;
+      navigator.clipboard.writeText(code)
+        .then(() => {
+          button.textContent = "Copied!";
+          setTimeout(() => {
+            button.textContent = "Copy";
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Error copying text: ', err);
+          alert("Failed to copy. Please try again.");
+        });
     }
 
-    const steps = document.querySelectorAll(".progress-step");
-    const progressBar = document.getElementById("progress-bar");
-    let completedSteps = 0;
-    
-    steps.forEach(step => {
-      step.addEventListener("click", () => {
-        step.classList.toggle("completed");
-        completedSteps = document.querySelectorAll(".progress-step.completed").length;
-        progressBar.style.width = `${(completedSteps / steps.length) * 100}%`;
-      });
-    });
-
+    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const navLinks = document.getElementById("nav-links");
-    
     mobileMenuBtn.addEventListener("click", () => {
       navLinks.classList.toggle("active");
-      mobileMenuBtn.innerHTML = navLinks.classList.contains("active") ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      mobileMenuBtn.innerHTML = navLinks.classList.contains("active") 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
     });
 
+    // Smooth scroll for nav and footer links
     document.querySelectorAll("nav a, .footer-links a").forEach(link => {
       link.addEventListener("click", e => {
         e.preventDefault();
-        navLinks.classList.remove("active");
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        if (navLinks.classList.contains("active")) {
+          navLinks.classList.remove("active");
+          mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+        const targetId = link.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
         document.querySelectorAll("nav a").forEach(navLink => navLink.classList.remove("active"));
         link.classList.add("active");
-        document.querySelector(link.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
 
+    // Back to top button
     const backToTopButton = document.getElementById("back-to-top");
     window.addEventListener("scroll", () => {
       backToTopButton.style.display = window.scrollY > 300 ? "flex" : "none";
     });
-    
-    backToTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-    function simulateGitVersion() {
-      document.getElementById("git-version-output").style.display = "block";
-      document.getElementById("git-version-output").innerHTML = "<code>git version 2.39.2</code>";
-    }
-    
-    function simulateConfigList() {
-      document.getElementById("config-list-output").style.display = "block";
-      document.getElementById("config-list-output").innerHTML = "<code>user.name=Neil Goyal<br>user.email=neil@example.com</code>";
-    }
-
+    // Quiz logic
     function submitQuiz() {
       const form = document.getElementById("quiz-form");
       const result = document.getElementById("quiz-result");
-      const answers = { q1: "b", q2: "a", q3: "b", q4: "b", q5: "b" };
-      const feedback = {
-        q1: "Correct! <code>git init</code> starts a new repository.",
-        q2: "Right! <code>git add .</code> stages all changes.",
-        q3: "Yes! <code>git push</code> sends commits to the remote repo.",
-        q4: "Correct! <code>git checkout feature</code> switches branches.",
-        q5: "Good! <code>git clone</code> copies a remote repo."
+      const answers = {
+        q1: "b", // git init
+        q2: "a", // git add .
+        q3: "b", // Sends committed changes to remote repository
+        q4: "b", // git checkout feature
+        q5: "b"  // Stage → Commit → Push
       };
       let score = 0;
-      const total = 5;
-
+      const total = Object.keys(answers).length;
       for (let q in answers) {
         const selected = form.querySelector(`input[name="${q}"]:checked`);
-        const feedbackDiv = document.getElementById(`${q}-feedback`);
-        feedbackDiv.style.display = "block";
-        if (selected && selected.value === answers[q]) {
-          score++;
-          feedbackDiv.style.color = var(--success);
-          feedbackDiv.innerHTML = feedback[q];
-        } else {
-          feedbackDiv.style.color = var(--danger);
-          feedbackDiv.innerHTML = selected ? `Wrong. ${feedback[q]}` : "Please select an answer.";
-        }
+        if (selected && selected.value === answers[q]) score++;
       }
-
       result.style.display = "block";
-      result.innerHTML = `Score: ${score}/${total} - ${score === total ? "Perfect!" : score >= total / 2 ? "Good effort!" : "Review and retry!"}`;
-      result.className = "quiz-result " + (score === total ? "result-success" : score >= total / 2 ? "result-partial" : "");
-      document.getElementById("retry-quiz").style.display = "block";
-
-      if (score >= total / 2) {
-        document.querySelector('.progress-step[data-step="7"]').classList.add("completed");
-        completedSteps = document.querySelectorAll(".progress-step.completed").length;
-        progressBar.style.width = `${(completedSteps / steps.length) * 100}%`;
+      if (score === total) {
+        result.className = "quiz-result result-success";
+        result.innerHTML = `<i class="fas fa-check-circle"></i> Excellent! You scored ${score}/${total}. You've mastered the basics of Git!`;
+      } else if (score >= total / 2) {
+        result.className = "quiz-result result-partial";
+        result.innerHTML = `<i class="fas fa-star-half-alt"></i> Good job! You scored ${score}/${total}. Review the sections to improve your knowledge.`;
+      } else {
+        result.className = "quiz-result";
+        result.style.backgroundColor = "#fee2e2";
+        result.style.color = "#b91c1c";
+        result.innerHTML = `<i class="fas fa-exclamation-circle"></i> You scored ${score}/${total}. Try reviewing the material and take the quiz again.`;
       }
     }
 
-    function retryQuiz() {
-      const form = document.getElementById("quiz-form");
-      form.reset();
-      document.getElementById("quiz-result").style.display = "none";
-      document.getElementById("retry-quiz").style.display = "none";
-      document.querySelectorAll(".quiz-feedback").forEach(f => f.style.display = "none");
+    // Simulation functions
+    function simulateGitVersion() {
+      const output = document.getElementById("git-version-output");
+      output.style.display = "block";
+      output.innerHTML = `<code>git version 2.39.2</code>`;
+    }
+    
+    function simulateConfigList() {
+      const output = document.getElementById("config-list-output");
+      output.style.display = "block";
+      output.innerHTML = `<code>user.name=Neil Goyal<br>user.email=neil@example.com<br>core.editor=vim<br>init.defaultbranch=main</code>`;
     }
 
+    // Highlight active section on scroll
     window.addEventListener("scroll", () => {
       const sections = document.querySelectorAll("main section");
-      const navLinks = document.querySelectorAll("nav a");
       let current = "";
       sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute("id");
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - 100) current = section.getAttribute("id");
       });
-      navLinks.forEach(link => {
+      document.querySelectorAll("nav a").forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href") === `#${current}`) link.classList.add("active");
       });
+    });
+
+    // Initialize active nav link on DOM load
+    document.addEventListener("DOMContentLoaded", () => {
+      const firstNavLink = document.querySelector("nav a");
+      if (firstNavLink) firstNavLink.classList.add("active");
     });
   </script>
 </body>
