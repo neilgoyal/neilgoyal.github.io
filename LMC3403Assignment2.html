@@ -26,11 +26,7 @@
       --transition: all 0.3s ease;
     }
     
-    * { 
-      box-sizing: border-box; 
-      margin: 0; 
-      padding: 0; 
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
       font-family: 'Open Sans', sans-serif;
@@ -66,10 +62,7 @@
     header::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0; left: 0; right: 0; bottom: 0;
       background: url('https://cdnjs.cloudflare.com/api/placeholder/1100/500') center/cover;
       opacity: 0.15;
       z-index: 1;
@@ -91,16 +84,8 @@
       margin: 0 auto;
     }
     
-    .progress-tracker,
-    .progress-step,
-    .progress-step-label,
-    .progress-completed {
-      display: none;
-    }
-    
     nav {
       background: white;
-      padding: 0;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -120,9 +105,7 @@
       list-style: none;
     }
     
-    .nav-links li {
-      position: relative;
-    }
+    .nav-links li { position: relative; }
     
     .nav-links a {
       display: block;
@@ -146,14 +129,11 @@
       transition: var(--transition);
     }
     
-    .nav-links a:hover {
-      color: var(--primary);
-    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
     
     .nav-links a:hover::after,
-    .nav-links a.active::after {
-      transform: scaleX(1);
-    }
+    .nav-links a.active::after { transform: scaleX(1); }
     
     .mobile-menu-btn {
       display: none;
@@ -165,17 +145,11 @@
       padding: 15px 0;
     }
     
-    main {
-      padding: 40px;
-    }
+    main { padding: 40px; }
     
     section {
       margin-bottom: 60px;
       padding-top: 20px;
-    }
-    
-    section:last-child {
-      margin-bottom: 0;
     }
     
     h2 {
@@ -198,17 +172,9 @@
       border-radius: 2px;
     }
     
-    h3 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--secondary);
-      margin: 25px 0 15px;
-      font-size: 1.5em;
-    }
+    h3 { font-family: 'Montserrat', sans-serif; color: var(--secondary); margin: 25px 0 15px; font-size: 1.5em; }
     
-    p {
-      margin-bottom: 20px;
-      color: #475569;
-    }
+    p { margin-bottom: 20px; color: #475569; }
     
     a {
       color: var(--primary);
@@ -216,14 +182,12 @@
       transition: var(--transition);
     }
     
-    a:hover {
-      color: var(--primary-dark);
-    }
+    a:hover { color: var(--primary-dark); }
     
     .card {
       background: white;
       border-radius: var(--border-radius);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       padding: 30px;
       margin: 25px 0;
       transition: var(--transition);
@@ -232,7 +196,7 @@
     
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
     
     pre {
@@ -282,9 +246,7 @@
       transition: var(--transition);
     }
     
-    .copy-btn:hover {
-      background: var(--primary-dark);
-    }
+    .copy-btn:hover { background: var(--primary-dark); }
     
     iframe {
       border-radius: var(--border-radius);
@@ -301,9 +263,7 @@
       margin: 30px 0;
     }
     
-    .visual-content {
-      flex: 1;
-    }
+    .visual-content { flex: 1; }
     
     .visual-image {
       flex: 1;
@@ -335,10 +295,7 @@
       font-weight: 600;
     }
     
-    .checklist-title i {
-      margin-right: 10px;
-      color: var(--primary);
-    }
+    .checklist-title i { margin-right: 10px; color: var(--primary); }
     
     .checklist label {
       display: flex;
@@ -368,7 +325,7 @@
       background: white;
       padding: 25px;
       border-radius: var(--border-radius);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     
     .quiz-question p {
@@ -389,9 +346,7 @@
       border: 1px solid #e2e8f0;
     }
     
-    .quiz-question label:hover {
-      background: #e0e7ff;
-    }
+    .quiz-question label:hover { background: #e0e7ff; }
     
     .quiz-question input[type="radio"] {
       margin-right: 10px;
@@ -489,7 +444,7 @@
     
     .resource-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
     
     .resource-img {
@@ -558,152 +513,16 @@
     
     .cta-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       color: var(--primary-dark);
     }
     
     footer {
       background: var(--secondary);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 40px;
+      color: white;
+      padding: 20px;
       text-align: center;
-    }
-    
-    .footer-content {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin: 20px 0;
-    }
-    
-    .footer-links a {
-      color: rgba(255, 255, 255, 0.7);
-      margin: 0 15px;
-      transition: var(--transition);
-    }
-    
-    .footer-links a:hover {
-      color: white;
-    }
-    
-    .social-links {
-      margin: 20px 0;
-    }
-    
-    .social-links a {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      color: white;
-      margin: 0 5px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-    }
-    
-    .social-links a:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-    
-    .btn-floating {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--primary);
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      z-index: 100;
-      transition: var(--transition);
-      font-size: 1.5em;
-    }
-    
-    .btn-floating:hover {
-      background: var(--primary-dark);
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-    
-    .interactive-code {
-      background: #f8fafc;
-      padding: 25px;
-      border-radius: var(--border-radius);
-      margin: 25px 0;
-      border: 1px solid #e2e8f0;
-    }
-    
-    .interactive-code button {
-      background: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: var(--transition);
-      margin-top: 15px;
-    }
-    
-    .interactive-code button:hover {
-      background: var(--primary-dark);
-    }
-    
-    .step-note {
-      background: #e0f2fe;
-      color: #0369a1;
-      padding: 15px 20px;
-      border-radius: var(--border-radius);
-      margin: 20px 0;
-      display: flex;
-      align-items: flex-start;
-    }
-    
-    .step-note i {
-      margin-right: 15px;
-      font-size: 1.2em;
-      margin-top: 2px;
-    }
-    
-    .tooltip {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .tooltip .tooltip-text {
-      visibility: hidden;
-      width: 200px;
-      background-color: var(--secondary);
-      color: white;
-      text-align: center;
-      border-radius: 6px;
-      padding: 10px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
       font-size: 0.9em;
-    }
-    
-    .tooltip:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
     }
     
     /* Output class for simulation results */
@@ -715,87 +534,35 @@
       border-radius: 6px;
     }
     
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     
-    main section {
-      animation: fadeIn 0.6s ease-out;
-    }
+    main section { animation: fadeIn 0.6s ease-out; }
     
-    /* Media Queries */
     @media (max-width: 900px) {
-      .visual-section {
-        flex-direction: column;
-      }
-      
-      .visual-image {
-        order: -1;
-      }
-      
-      h2 {
-        font-size: 1.8em;
-      }
+      .visual-section { flex-direction: column; }
+      .visual-image { order: -1; }
+      h2 { font-size: 1.8em; }
     }
     
     @media (max-width: 768px) {
-      main {
-        padding: 30px 20px;
-      }
-      
-      header {
-        padding: 40px 20px;
-      }
-      
-      header h1 {
-        font-size: 2.2em;
-      }
-      
-      .nav-container {
-        flex-direction: column;
-        position: relative;
-      }
-      
-      .nav-links {
-        flex-direction: column;
-        display: none;
-      }
-      
-      .nav-links.active {
-        display: flex;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;
-      }
-      
-      .resources-grid {
-        grid-template-columns: 1fr;
-      }
+      main { padding: 30px 20px; }
+      header { padding: 40px 20px; }
+      header h1 { font-size: 2.2em; }
+      .nav-container { flex-direction: column; position: relative; }
+      .nav-links { flex-direction: column; display: none; }
+      .nav-links.active { display: flex; }
+      .mobile-menu-btn { display: block; position: absolute; right: 20px; top: 15px; }
+      .resources-grid { grid-template-columns: 1fr; }
     }
     
     @media (max-width: 480px) {
-      .container {
-        margin: 20px 10px;
-      }
-      
-      main {
-        padding: 20px 15px;
-      }
-      
-      h2 {
-        font-size: 1.6em;
-      }
-      
-      .cta-section {
-        padding: 40px 20px;
-        margin: 40px -15px -20px;
-      }
+      .container { margin: 20px 10px; }
+      main { padding: 20px 15px; }
+      h2 { font-size: 1.6em; }
+      .cta-section { padding: 40px 20px; margin: 40px -15px -20px; }
     }
   </style>
 </head>
@@ -803,7 +570,7 @@
   <div class="container">
     <header>
       <div class="header-content">
-        <h1>Git & GitHub Mastery</h1>
+        <h1>Git &amp; GitHub Mastery</h1>
         <p>Master version control in ~1 hour with this interactive step-by-step guide</p>
       </div>
     </header>
@@ -840,7 +607,7 @@
           <div class="step-note">
             <i class="fas fa-lightbulb"></i>
             <div>
-              <strong>Pro Tip:</strong> Installing Git also gives you Git Bash on Windows for a Linux-like command line experience.
+              <strong>Pro Tip:</strong> Installing Git also provides Git Bash on Windows for a Linux-like terminal experience.
             </div>
           </div>
         </div>
@@ -849,20 +616,16 @@
         
         <div class="interactive-code">
           <p>Verify your Git installation by checking its version:</p>
-          <div class="code-header">
-            <span>Command Line</span>
-          </div>
-          <pre class="with-header">git --version<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+          <div class="code-header"><span>Command Line</span></div>
+          <pre class="with-header"><code>git --version</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
           <button onclick="simulateGitVersion()">Simulate Output</button>
           <div id="git-version-output" class="output"></div>
         </div>
-
+        
         <div class="interactive-code">
           <p>Check your Git configuration settings:</p>
-          <div class="code-header">
-            <span>Command Line</span>
-          </div>
-          <pre class="with-header">git config --list<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+          <div class="code-header"><span>Command Line</span></div>
+          <pre class="with-header"><code>git config --list</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
           <button onclick="simulateConfigList()">Simulate Output</button>
           <div id="config-list-output" class="output"></div>
         </div>
@@ -872,35 +635,20 @@
       <section id="configure">
         <h2><i class="fas fa-cog"></i> Step 2: Configure Git</h2>
         <p>Setting your identity is essential for working with Git. This links your commits to your name and email address.</p>
-        
         <div class="visual-section">
           <div class="visual-content">
-            <div class="code-header">
-              <span>Configure Identity</span>
-            </div>
-            <pre class="with-header">git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
-            <p>Git uses this information to identify who made each commit in a project's history. It's important for collaboration.</p>
+            <div class="code-header"><span>Configure Identity</span></div>
+            <pre class="with-header"><code>git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+            <p>Git uses this information to track who makes each commit. Make sure the email matches your GitHub account.</p>
             <div class="step-note">
               <i class="fas fa-info-circle"></i>
-              <div>
-                <strong>Note:</strong> Ensure the email address matches the one you use for GitHub.
-              </div>
+              <div><strong>Note:</strong> Use the same email address as your GitHub account.</div>
             </div>
           </div>
           <div class="visual-image">
-            <img src="https://git-scm.com/images/logo@2x.png" alt="Git Logo - Version Control System Logo" width="400" height="168">
+            <img src="https://git-scm.com/images/logo@2x.png" alt="Git Logo" width="400" height="168">
           </div>
-        </div>
-        
-        <div class="interactive-code">
-          <p>Verify your configuration settings:</p>
-          <div class="code-header">
-            <span>Command Line</span>
-          </div>
-          <pre class="with-header">git config --list<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
-          <button onclick="simulateConfigList()">Simulate Output</button>
-          <div id="config-list-output" class="output"></div>
         </div>
       </section>
 
@@ -923,11 +671,11 @@ git config --global user.email "your.email@example.com"<button class="copy-btn" 
         <div class="visual-section">
           <div class="visual-content">
             <h3>Why Use GitHub?</h3>
-            <p>GitHub provides a secure, cloud-based location for your repositories and collaboration features like pull requests, issue tracking, and more.</p>
+            <p>GitHub provides a secure, cloud-based home for your repositories with powerful collaboration features.</p>
             <a href="https://github.com/join" target="_blank" rel="noopener noreferrer" class="btn">Create GitHub Account</a>
           </div>
           <div class="visual-image">
-            <img src="https://docs.github.com/assets/cb-23992/images/help/repository/repo-create.png" alt="Creating a GitHub repository interface screenshot" width="500" height="300">
+            <img src="https://docs.github.com/assets/cb-23992/images/help/repository/repo-create.png" alt="GitHub Repository Creation" width="500" height="300">
           </div>
         </div>
         
@@ -937,13 +685,11 @@ git config --global user.email "your.email@example.com"<button class="copy-btn" 
       <!-- Step 4: Connect to GitHub -->
       <section id="connect">
         <h2><i class="fas fa-cloud-upload-alt"></i> Step 4: Connect to GitHub</h2>
-        <p>Connect your local project to GitHub and push your code online to access it anywhere and collaborate with others.</p>
+        <p>Connect your local project to GitHub and push your code online to collaborate and access it anywhere.</p>
         <div class="card">
           <h3>The Git Workflow</h3>
-          <div class="code-header">
-            <span>Basic Git Commands</span>
-          </div>
-          <pre class="with-header"># Initialize a new Git repository
+          <div class="code-header"><span>Basic Git Commands</span></div>
+          <pre class="with-header"><code># Initialize a new Git repository
 git init
 
 # Add files to staging area
@@ -956,7 +702,7 @@ git commit -m "First commit"
 git remote add origin https://github.com/username/my-first-repo.git
 
 # Push code to GitHub
-git push -u origin main<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+git push -u origin main</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
         </div>
         
         <div class="visual-section">
@@ -965,14 +711,12 @@ git push -u origin main<button class="copy-btn" onclick="copyCode(this)">Copy</b
             <p>Git uses a three-stage architecture:</p>
             <ol>
               <li><strong>Working Directory:</strong> Where you modify files</li>
-              <li><strong>Staging Area:</strong> Where you prepare changes for commit</li>
+              <li><strong>Staging Area:</strong> Where changes are prepared for commit</li>
               <li><strong>Repository:</strong> Where commits are stored permanently</li>
             </ol>
             <div class="step-note">
               <i class="fas fa-lightbulb"></i>
-              <div>
-                <strong>Pro Tip:</strong> Use <code>git status</code> frequently to review tracked, modified, or staged files.
-              </div>
+              <div><strong>Pro Tip:</strong> Use <code>git status</code> frequently to see file changes.</div>
             </div>
           </div>
           <div class="visual-image">
@@ -981,8 +725,8 @@ git push -u origin main<button class="copy-btn" onclick="copyCode(this)">Copy</b
         </div>
         
         <div class="interactive-code">
-          <p>Try these commands on your own project or in an online simulator:</p>
-          <a href="https://replit.com/@replit/Git-Starter" target="_blank" class="btn">Open Git Simulator</a>
+          <p>Try these commands on your project or in an online simulator:</p>
+          <a href="https://learngitbranching.js.org/" target="_blank" class="btn">Open Git Simulator</a>
         </div>
         
         <div class="checklist">
@@ -1002,10 +746,8 @@ git push -u origin main<button class="copy-btn" onclick="copyCode(this)">Copy</b
         <p>Branches let you develop features, fix bugs, or experiment without affecting the main codebase.</p>
         <div class="card">
           <h3>Working with Branches</h3>
-          <div class="code-header">
-            <span>Branching Commands</span>
-          </div>
-          <pre class="with-header"># Create a new branch
+          <div class="code-header"><span>Branching Commands</span></div>
+          <pre class="with-header"><code># Create a new branch
 git branch feature-name
 
 # Switch to the new branch
@@ -1022,7 +764,7 @@ git commit -m "Add new feature"
 git checkout main
 
 # Merge changes from feature branch
-git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+git merge feature-name</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
         </div>
         
         <div class="visual-section">
@@ -1037,17 +779,14 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
             </ul>
             <div class="step-note">
               <i class="fas fa-info-circle"></i>
-              <div>
-                <strong>Best Practice:</strong> Create a new branch for each feature or bug fix. Use descriptive names like <code>user-authentication</code> or <code>fix-login-bug</code>.
-              </div>
+              <div><strong>Best Practice:</strong> Create a new branch for each feature or bug fix using descriptive names.</div>
             </div>
           </div>
           <div class="visual-image">
-            <img src="https://git-scm.com/images/about/branches@2x.png" alt="Git Branching Diagram" width="550" height="309">
+            <!-- Updated video embed for Branching Tutorial -->
+            <iframe src="https://www.youtube.com/embed/tRBSR6AHhRU" title="Git Branching Tutorial" allowfullscreen></iframe>
           </div>
         </div>
-        
-        <iframe src="https://www.youtube.com/embed/QV0kUo7W8TM" title="Git Branching Tutorial" allowfullscreen></iframe>
       </section>
 
       <!-- Interactive Quiz -->
@@ -1098,9 +837,7 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
         <p>Continue your Git and GitHub journey with these excellent resources.</p>
         <div class="resources-grid">
           <div class="resource-card">
-            <div class="resource-img">
-              <i class="fab fa-github"></i>
-            </div>
+            <div class="resource-img"><i class="fab fa-github"></i></div>
             <div class="resource-content">
               <div class="resource-title">GitHub Learning Lab</div>
               <p class="resource-desc">Interactive courses and projects to help you master Git and GitHub.</p>
@@ -1108,9 +845,7 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
             </div>
           </div>
           <div class="resource-card">
-            <div class="resource-img">
-              <i class="fas fa-book"></i>
-            </div>
+            <div class="resource-img"><i class="fas fa-book"></i></div>
             <div class="resource-content">
               <div class="resource-title">Pro Git Book</div>
               <p class="resource-desc">The entire Pro Git book, written by Scott Chacon and Ben Straub.</p>
@@ -1118,9 +853,7 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
             </div>
           </div>
           <div class="resource-card">
-            <div class="resource-img">
-              <i class="fas fa-laptop-code"></i>
-            </div>
+            <div class="resource-img"><i class="fas fa-laptop-code"></i></div>
             <div class="resource-content">
               <div class="resource-title">Atlassian Git Tutorials</div>
               <p class="resource-desc">Comprehensive guides and tutorials for Git workflows.</p>
@@ -1128,9 +861,7 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
             </div>
           </div>
           <div class="resource-card">
-            <div class="resource-img">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
+            <div class="resource-img"><i class="fas fa-chalkboard-teacher"></i></div>
             <div class="resource-content">
               <div class="resource-title">Git Cheat Sheet</div>
               <p class="resource-desc">Quick reference for Git commands and workflows.</p>
@@ -1148,22 +879,9 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
       </section>
     </main>
 
+    <!-- Simplified Footer -->
     <footer>
-      <div class="footer-content">
-        <p>© 2025 Git & GitHub Mastery Guide for Assignment 2</p>
-        <ul class="footer-links">
-          <li><a href="#installing">Install Git</a></li>
-          <li><a href="#configure">Configure</a></li>
-          <li><a href="#repository">Repository</a></li>
-          <li><a href="#connect">Connect</a></li>
-          <li><a href="#branching">Branching</a></li>
-        </ul>
-        <div class="social-links">
-          <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-          <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
+      <p>© 2025 Git &amp; GitHub Mastery Guide</p>
     </footer>
   </div>
   
@@ -1172,15 +890,14 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
   </div>
 
   <script>
-    // Copy code function using previousElementSibling for robustness
+    // Copy code function: retrieves code from the <code> element
     function copyCode(button) {
-      const code = button.previousElementSibling.textContent;
+      const codeElement = button.parentElement.querySelector("code");
+      const code = codeElement.innerText;
       navigator.clipboard.writeText(code)
         .then(() => {
           button.textContent = "Copied!";
-          setTimeout(() => {
-            button.textContent = "Copy";
-          }, 2000);
+          setTimeout(() => { button.textContent = "Copy"; }, 2000);
         })
         .catch(err => {
           console.error('Error copying text: ', err);
@@ -1199,7 +916,7 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
     });
 
     // Smooth scroll for nav and footer links
-    document.querySelectorAll("nav a, .footer-links a").forEach(link => {
+    document.querySelectorAll("nav a, footer p").forEach(link => {
       link.addEventListener("click", e => {
         e.preventDefault();
         if (navLinks.classList.contains("active")) {
@@ -1274,7 +991,6 @@ git merge feature-name<button class="copy-btn" onclick="copyCode(this)">Copy</bu
       let current = "";
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (window.scrollY >= sectionTop - 100) current = section.getAttribute("id");
       });
       document.querySelectorAll("nav a").forEach(link => {
