@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Master Git and GitHub basics with this interactive step-by-step guide" />
-  <title>Interactive Guide: Git & GitHub Mastery</title>
+  <title>Interactive Guide: Git &amp; GitHub Mastery</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
   <!-- FontAwesome for icons -->
@@ -89,7 +89,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
     
     .nav-container {
@@ -264,19 +264,6 @@
     }
     
     .visual-content { flex: 1; }
-    
-    .visual-image {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .visual-image img {
-      max-width: 100%;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-    }
     
     .checklist {
       background: #f8fafc;
@@ -543,7 +530,6 @@
     
     @media (max-width: 900px) {
       .visual-section { flex-direction: column; }
-      .visual-image { order: -1; }
       h2 { font-size: 1.8em; }
     }
     
@@ -606,9 +592,7 @@
           </ol>
           <div class="step-note">
             <i class="fas fa-lightbulb"></i>
-            <div>
-              <strong>Pro Tip:</strong> Installing Git also provides Git Bash on Windows for a Linux-like terminal experience.
-            </div>
+            <div><strong>Pro Tip:</strong> Installing Git also provides Git Bash on Windows for a Linux-like terminal experience.</div>
           </div>
         </div>
         
@@ -667,7 +651,6 @@ git config --global user.email "your.email@example.com"</code><button class="cop
             <li>Click "Create repository"</li>
           </ol>
         </div>
-        
         <div class="visual-section">
           <div class="visual-content">
             <h3>Why Use GitHub?</h3>
@@ -678,7 +661,6 @@ git config --global user.email "your.email@example.com"</code><button class="cop
             <img src="https://docs.github.com/assets/cb-23992/images/help/repository/repo-create.png" alt="GitHub Repository Creation" width="500" height="300">
           </div>
         </div>
-        
         <iframe src="https://www.youtube.com/embed/0fKg7e37bQE" title="Creating a GitHub Repository" allowfullscreen></iframe>
       </section>
 
@@ -704,7 +686,6 @@ git remote add origin https://github.com/username/my-first-repo.git
 # Push code to GitHub
 git push -u origin main</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
         </div>
-        
         <div class="visual-section">
           <div class="visual-content">
             <h3>Understanding the Git Flow</h3>
@@ -719,16 +700,11 @@ git push -u origin main</code><button class="copy-btn" onclick="copyCode(this)">
               <div><strong>Pro Tip:</strong> Use <code>git status</code> frequently to see file changes.</div>
             </div>
           </div>
-          <div class="visual-image">
-            <img src="https://git-scm.com/images/about/index1@2x.png" alt="Git Workflow Diagram" width="550" height="309">
-          </div>
         </div>
-        
         <div class="interactive-code">
           <p>Try these commands on your project or in an online simulator:</p>
           <a href="https://learngitbranching.js.org/" target="_blank" class="btn">Open Git Simulator</a>
         </div>
-        
         <div class="checklist">
           <h3 class="checklist-title"><i class="fas fa-tasks"></i> Connection Checklist</h3>
           <label><input type="checkbox"> Created a local folder for your project</label>
@@ -766,7 +742,6 @@ git checkout main
 # Merge changes from feature branch
 git merge feature-name</code><button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
         </div>
-        
         <div class="visual-section">
           <div class="visual-content">
             <h3>Why Use Branches?</h3>
@@ -781,10 +756,6 @@ git merge feature-name</code><button class="copy-btn" onclick="copyCode(this)">C
               <i class="fas fa-info-circle"></i>
               <div><strong>Best Practice:</strong> Create a new branch for each feature or bug fix using descriptive names.</div>
             </div>
-          </div>
-          <div class="visual-image">
-            <!-- Updated video embed for Branching Tutorial -->
-            <iframe src="https://www.youtube.com/embed/tRBSR6AHhRU" title="Git Branching Tutorial" allowfullscreen></iframe>
           </div>
         </div>
       </section>
