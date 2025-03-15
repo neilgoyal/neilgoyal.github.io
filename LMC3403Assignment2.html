@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Guide: Git & GitHub Basics</title>
+  <style>
+    body {font-family: Arial, sans-serif; line-height:1.6; background-color:#f4f4f9; padding:30px; max-width:700px; margin:auto;}
+    h2 {color:#0366d6;}
+    a {color:#0366d6; text-decoration:none;}
+    pre {background:#eee;padding:10px;border-radius:5px;}
+    iframe {border-radius:10px; width:100%; height:315px; margin-bottom:20px;}
+    .quiz {padding:15px; background:#fff; border-radius:8px;}
+  </style>
+</head>
+<body>
+
+<h2>🚀 Git & GitHub Interactive Guide</h2>
+
+<h3>Step 1: Installing Git</h3>
+<ol>
+  <li>Download Git from <a href="https://git-scm.com/downloads">git-scm.com</a></li>
+  <li>Install Git (Accept defaults, recommended settings)</li>
+</ol>
+
+<iframe src="https://www.youtube.com/embed/J_Clau1bYco" allowfullscreen></iframe>
+
+<h3>Step 2: Configure Git</h3>
+<pre>
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+</pre>
+
+<h3>Step 3: Create your First GitHub Repository</h3>
+<ul>
+  <li>Create an account at <a href="https://github.com">GitHub.com</a>.</li>
+  <li>Click "New Repository" and follow instructions.</li>
+</ul>
+
+<iframe src="https://www.youtube.com/embed/hMfi0mv2u7g" allowfullscreen></iframe>
+
+<h3>Step 4: Connect Local Project to GitHub</h3>
+<pre>
+git init
+git add .
+git commit -m "First commit"
+git remote add origin &lt;your repo URL&gt;
+git push -u origin main
+</pre>
+
+<h3>🎯 Quick Quiz</h3>
+<div class="quiz">
+  <ol>
+    <li>What command initializes a Git repository?</li>
+    <li>How do you add files to your Git staging area?</li>
+    <li>What's the command to push code to GitHub?</li>
+  </ol>
+  <p><i>Check your answers: git init, git add ., git push</i></p>
+</div>
+
+<h3>📚 Extra Resources</h3>
+<ul>
+  <li><a href="https://guides.github.com/activities/hello-world/">GitHub Official Tutorial</a></li>
+  <li><a href="https://www.atlassian.com/git/tutorials">Atlassian Git Tutorial</a></li>
+</ul>
+
+<h3>🎉 Congratulations!</h3>
+<p>You've successfully learned Git & GitHub basics!</p>
+
+</body>
+</html>
