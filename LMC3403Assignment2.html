@@ -5,52 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Interactive Guide: Git & GitHub Basics</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      background: url('https://images.unsplash.com/photo-1517430816045-df4b7de011fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
       color: #333;
       padding: 20px;
     }
     .container {
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 30px;
-      max-width: 900px;
+      background: rgba(255, 255, 255, 0.98);
+      padding: 35px;
+      max-width: 1000px;
       margin: 30px auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
-    header {
+    header { text-align: center; margin-bottom: 35px; }
+    header h1 { color: #0366d6; font-size: 2.8em; margin-bottom: 15px; }
+    nav {
+      background: #0366d6;
+      padding: 15px;
+      border-radius: 8px;
       text-align: center;
       margin-bottom: 30px;
     }
-    header h1 { color: #0366d6; margin-bottom: 10px; }
-    nav {
-      text-align: center;
-      margin-bottom: 20px;
-      background: #f8f9fa;
-      padding: 10px;
-      border-radius: 5px;
-    }
     nav a {
-      margin: 0 15px;
-      color: #0366d6;
+      color: white;
+      margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: opacity 0.3s;
     }
-    nav a:hover { color: #004085; }
-    h2, h3 { color: #0366d6; margin: 20px 0 10px; }
+    nav a:hover { opacity: 0.8; }
+    h2 { color: #0366d6; margin: 30px 0 15px; font-size: 2em; }
+    h3 { color: #004085; margin: 20px 0 10px; }
     pre {
       background: #f4f4f4;
       padding: 15px;
-      border-radius: 5px;
+      border-radius: 6px;
       overflow-x: auto;
       font-size: 0.95em;
+      position: relative;
     }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #0366d6;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .copy-btn:hover { background: #004085; }
     iframe {
       border-radius: 10px;
       width: 100%;
@@ -58,49 +70,70 @@
       margin: 20px 0;
       border: none;
     }
+    .visual-aid {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+    }
+    .visual-aid img { max-width: 50%; border-radius: 8px; margin-right: 20px; }
+    .checklist {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .checklist label { display: block; margin: 10px 0; }
+    .checklist input[type="checkbox"] { margin-right: 10px; }
     .quiz {
       background: #eef7ff;
       border: 1px solid #cce4ff;
       border-radius: 8px;
-      padding: 20px;
+      padding: 25px;
       margin: 20px 0;
     }
-    .quiz ol { margin-left: 20px; }
-    .quiz button {
-      background: #0366d6;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
+    .quiz-question { margin-bottom: 20px; }
+    .quiz-question p { font-weight: bold; }
+    .quiz-question label { display: block; margin: 8px 0; }
+    .quiz-result { display: none; color: #28a745; font-weight: bold; }
+    .progress-tracker {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
     }
-    .quiz button:hover { background: #004085; }
-    .resources ul { list-style-type: disc; margin-left: 20px; }
-    footer { text-align: center; margin-top: 30px; font-size: 0.9em; color: #555; }
-    .progress-bar {
-      width: 100%;
+    .progress-step {
+      width: 16%;
+      text-align: center;
+      padding: 12px;
       background: #e9ecef;
-      height: 10px;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    .progress { height: 100%; background: #0366d6; width: 0; border-radius: 5px; transition: width 0.3s; }
-    .collapsible {
+    .progress-step.completed { background: #28a745; color: white; }
+    .interactive-code {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 15px 0;
+    }
+    .interactive-code button {
       background: #0366d6;
       color: white;
-      cursor: pointer;
-      padding: 10px;
+      padding: 8px 15px;
       border: none;
-      width: 100%;
-      text-align: left;
-      border-radius: 5px;
-      margin: 10px 0;
+      border-radius: 4px;
+      cursor: pointer;
     }
-    .content { display: none; padding: 15px; }
+    .interactive-code button:hover { background: #004085; }
+    footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #555; }
     @media (max-width: 600px) {
       body { padding: 10px; }
       .container { padding: 20px; max-width: 100%; }
       nav a { display: block; margin: 10px 0; }
+      .progress-tracker { flex-direction: column; }
+      .progress-step { width: 100%; margin-bottom: 10px; }
+      .visual-aid { flex-direction: column; }
+      .visual-aid img { max-width: 100%; margin-right: 0; }
     }
   </style>
 </head>
@@ -108,108 +141,204 @@
   <div class="container">
     <header>
       <h1>🚀 Git & GitHub Interactive Guide</h1>
-      <p>Learn the basics of version control in ~1 hour!</p>
-      <div class="progress-bar"><div class="progress" id="progress"></div></div>
+      <p>Master version control in ~1 hour with Neil Goyal</p>
+      <div class="progress-tracker" id="progress-tracker">
+        <div class="progress-step" data-step="1">Install</div>
+        <div class="progress-step" data-step="2">Config</div>
+        <div class="progress-step" data-step="3">Repo</div>
+        <div class="progress-step" data-step="4">Connect</div>
+        <div class="progress-step" data-step="5">Branch</div>
+        <div class="progress-step" data-step="6">Quiz</div>
+      </div>
     </header>
 
     <nav>
-      <a href="#installing">Installing Git</a>
-      <a href="#configure">Configure Git</a>
-      <a href="#repository">First Repository</a>
-      <a href="#connect">Connect to GitHub</a>
-      <a href="#quiz">Quiz</a>
-      <a href="#resources">Resources</a>
+      <a href="#installing"><i class="fas fa-download"></i> Install Git</a>
+      <a href="#configure"><i class="fas fa-cog"></i> Configure</a>
+      <a href="#repository"><i class="fas fa-folder"></i> Repository</a>
+      <a href="#connect"><i class="fas fa-cloud-upload-alt"></i> Connect</a>
+      <a href="#branching"><i class="fas fa-code-branch"></i> Branching</a>
+      <a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a>
     </nav>
 
     <section id="installing">
-      <h2>Step 1: Installing Git (~10 min)</h2>
-      <p>Let's get Git on your machine!</p>
+      <h2><i class="fas fa-download"></i> Step 1: Installing Git (~10 min)</h2>
+      <p>Get Git running on your machine to start version control.</p>
       <ol>
-        <li>Download Git from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">git-scm.com</a>.</li>
-        <li>Run the installer and accept the default settings.</li>
+        <li>Download from <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">git-scm.com</a>.</li>
+        <li>Install with default settings.</li>
       </ol>
-      <iframe src="https://www.youtube.com/embed/J_Clau1bYco" title="Git Installation Tutorial" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/J_Clau1bYco" title="How to Install Git" allowfullscreen></iframe>
+      <div class="interactive-code">
+        <p>Verify it worked:</p>
+        <pre>git --version<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+        <button onclick="alert('Expect: git version 2.x.x')">Simulate</button>
+      </div>
     </section>
 
     <section id="configure">
-      <h2>Step 2: Configure Git (~10 min)</h2>
-      <p>Set up your identity for Git commits.</p>
-      <pre>
-git config --global user.name "Your Name"
-git config --global user.email "your_email@example.com"
-      </pre>
-      <button class="collapsible">Why configure Git?</button>
-      <div class="content">
-        <p>Configuring Git with your name and email ensures every commit is tagged with your identity, making collaboration easier.</p>
+      <h2><i class="fas fa-cog"></i> Step 2: Configure Git (~10 min)</h2>
+      <p>Set your identity for tracking changes.</p>
+      <pre>git config --global user.name "Neil Goyal"
+git config --global user.email "neil@example.com"<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      <div class="visual-aid">
+        <img src="https://git-scm.com/images/logo@2x.png" alt="Git Logo">
+        <p><strong>Why?</strong> This links your commits to you!</p>
+      </div>
+      <div class="interactive-code">
+        <p>Check your setup:</p>
+        <pre>git config --list<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+        <button onclick="alert('You’d see user.name=Neil Goyal')">Simulate</button>
       </div>
     </section>
 
     <section id="repository">
-      <h2>Step 3: Create Your First Repository (~15 min)</h2>
+      <h2><i class="fas fa-folder"></i> Step 3: Create a Repository (~15 min)</h2>
+      <p>Store your code on GitHub!</p>
       <ul>
         <li>Sign up at <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub.com</a>.</li>
-        <li>Click "New Repository" and name it (e.g., "my-first-repo").</li>
+        <li>Click "New Repository" and name it "my-first-repo".</li>
       </ul>
-      <img src="https://user-images.githubusercontent.com/9919/43683135-7b28c582-9844-11e8-9e07-09274ab8f5b4.png" alt="Screenshot of creating a new GitHub repository" style="width:100%; border-radius:8px; margin-top:15px;">
-      <iframe src="https://www.youtube.com/embed/hMfi0mv2u7g" title="Creating a GitHub Repository" allowfullscreen></iframe>
+      <div class="visual-aid">
+        <img src="https://docs.github.com/assets/cb-23992/images/help/repository/repo-create.png" alt="Creating a GitHub repository">
+        <p><strong>Tip:</strong> Make it public or private!</p>
+      </div>
+      <iframe src="https://www.youtube.com/embed/0fKg7e37bQE" title="Creating a GitHub Repository" allowfullscreen></iframe>
     </section>
 
     <section id="connect">
-      <h2>Step 4: Connect to GitHub (~15 min)</h2>
-      <p>Link your local project to GitHub.</p>
-      <pre>
-git init
+      <h2><i class="fas fa-cloud-upload-alt"></i> Step 4: Connect to GitHub (~15 min)</h2>
+      <p>Push your local code online.</p>
+      <pre>git init
 git add .
 git commit -m "First commit"
-git remote add origin <your_repo_URL>
-git push -u origin main
-      </pre>
-      <p><strong>Tip:</strong> Replace <your_repo_URL> with the URL from your GitHub repo.</p>
+git remote add origin https://github.com/username/my-first-repo.git
+git push -u origin main<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      <div class="visual-aid">
+        <img src="https://git-scm.com/images/about/workflow-a@2x.png" alt="Git Workflow Diagram">
+        <p><strong>Flow:</strong> Local → Staging → Remote</p>
+      </div>
+      <div class="interactive-code">
+        <p>Try it: <a href="https://replit.com/@replit/Git-Starter" target="_blank">Git Simulator</a></p>
+      </div>
+      <div class="checklist">
+        <h3>Checklist</h3>
+        <label><input type="checkbox"> Initialized repo with <code>git init</code></label>
+        <label><input type="checkbox"> Added files with <code>git add .</code></label>
+        <label><input type="checkbox"> Committed with <code>git commit</code></label>
+        <label><input type="checkbox"> Pushed to GitHub</label>
+      </div>
+    </section>
+
+    <section id="branching">
+      <h2><i class="fas fa-code-branch"></i> Step 5: Branching Basics (~15 min)</h2>
+      <p>Create branches to work on features safely.</p>
+      <pre>git branch feature
+git checkout feature
+git add .
+git commit -m "Add feature"
+git checkout main
+git merge feature<button class="copy-btn" onclick="copyCode(this)">Copy</button></pre>
+      <div class="visual-aid">
+        <img src="https://git-scm.com/images/about/branching-and-merging@2x.png" alt="Git Branching Diagram">
+        <p><strong>Why?</strong> Test changes without breaking <code>main</code>.</p>
+      </div>
+      <iframe src="https://www.youtube.com/embed/QV0kUo7W8TM" title="Git Branching Tutorial" allowfullscreen></iframe>
     </section>
 
     <section id="quiz">
-      <h2>🎯 Quick Quiz (~10 min)</h2>
+      <h2><i class="fas fa-question-circle"></i> Interactive Quiz (~15 min)</h2>
       <div class="quiz">
-        <ol>
-          <li>What command initializes a Git repository? <button onclick="alert('Answer: git init')">Check Answer</button></li>
-          <li>How do you add files to the staging area? <button onclick="alert('Answer: git add .')">Check Answer</button></li>
-          <li>What's the command to push code to GitHub? <button onclick="alert('Answer: git push')">Check Answer</button></li>
-        </ol>
+        <form id="quiz-form">
+          <div class="quiz-question">
+            <p>1. What command starts a new Git repository?</p>
+            <label><input type="radio" name="q1" value="a"> git start</label>
+            <label><input type="radio" name="q1" value="b"> git init</label>
+            <label><input type="radio" name="q1" value="c"> git create</label>
+          </div>
+          <div class="quiz-question">
+            <p>2. How do you stage all changes?</p>
+            <label><input type="radio" name="q2" value="a"> git add .</label>
+            <label><input type="radio" name="q2" value="b"> git commit</label>
+            <label><input type="radio" name="q2" value="c"> git push</label>
+          </div>
+          <div class="quiz-question">
+            <p>3. What does <code>git push</code> do?</p>
+            <label><input type="radio" name="q3" value="a"> Updates local repo</label>
+            <label><input type="radio" name="q3" value="b"> Sends code to remote</label>
+            <label><input type="radio" name="q3" value="c"> Creates a branch</label>
+          </div>
+          <div class="quiz-question">
+            <p>4. How do you switch to a branch named "feature"?</p>
+            <label><input type="radio" name="q4" value="a"> git branch feature</label>
+            <label><input type="radio" name="q4" value="b"> git checkout feature</label>
+            <label><input type="radio" name="q4" value="c"> git merge feature</label>
+          </div>
+          <button type="button" onclick="submitQuiz()">Submit Answers</button>
+        </form>
+        <p id="quiz-result" class="quiz-result"></p>
       </div>
     </section>
 
     <section id="resources" class="resources">
-      <h2>📚 Extra Resources</h2>
+      <h2><i class="fas fa-book"></i> Extra Resources</h2>
       <ul>
-        <li><a href="https://guides.github.com/activities/hello-world/" target="_blank" rel="noopener noreferrer">GitHub Hello World Tutorial</a></li>
+        <li><a href="https://guides.github.com/activities/hello-world/" target="_blank" rel="noopener noreferrer">GitHub Hello World</a></li>
         <li><a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noopener noreferrer">Atlassian Git Tutorials</a></li>
-        <li><a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer">Pro Git Book (Free)</a></li>
+        <li><a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener noreferrer">Pro Git Book</a></li>
       </ul>
     </section>
 
     <footer>
-      <p>© 2025 Git & GitHub Guide. Created for [Your Name]'s Assignment.</p>
+      <p>© 2025 Git & GitHub Guide by Neil Goyal for Assignment 2</p>
     </footer>
   </div>
 
   <script>
-    // Collapsible sections
-    const collapsibles = document.getElementsByClassName("collapsible");
-    for (let i = 0; i < collapsibles.length; i++) {
-      collapsibles[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        const content = this.nextElementSibling;
-        content.style.display = content.style.display === "block" ? "none" : "block";
-      });
+    // Copy code
+    function copyCode(button) {
+      const code = button.previousSibling.textContent;
+      navigator.clipboard.writeText(code).then(() => alert("Code copied!"));
     }
 
-    // Progress bar (simplified)
-    window.addEventListener("scroll", () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById("progress").style.width = scrolled + "%";
+    // Progress tracker
+    const steps = document.querySelectorAll(".progress-step");
+    steps.forEach(step => {
+      step.addEventListener("click", () => {
+        step.classList.toggle("completed");
+      });
     });
+
+    // Smooth scroll
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute("href"));
+        target.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    // Quiz logic
+    function submitQuiz() {
+      const form = document.getElementById("quiz-form");
+      const answers = {
+        q1: "b", // git init
+        q2: "a", // git add .
+        q3: "b", // Sends code to remote
+        q4: "b"  // git checkout feature
+      };
+      let score = 0;
+      const total = 4;
+
+      for (let q in answers) {
+        const selected = form.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) score++;
+      }
+
+      const result = document.getElementById("quiz-result");
+      result.style.display = "block";
+      result.textContent = `You scored ${score}/${total}! ${score === total ? "Perfect!" : "Review the steps!"}`;
+    }
   </script>
 </body>
 </html>
